@@ -134,9 +134,15 @@
     function DisplayContactPage()
     {
         console.log("Contact Us Page");
-
         ContactFormValidation();
+        if(sessionStorage.getItem("user"))
+        {
+            //if user signs in the contact list button becomes visible
+            let listbutton = document.getElementById("showContactListBtn");
+            listbutton.classList.remove('invisible');
+        }
         
+
         let sendButton = document.getElementById("sendButton");
         let subscribeCheckbox = document.getElementById("subscribeCheckbox");
 
